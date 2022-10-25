@@ -5,6 +5,8 @@ import 'package:g5/pages/home_page.dart';
 import 'package:g5/pages/productDetail_page.dart';
 import 'package:g5/pages/signin_page.dart';
 import 'package:g5/provider/accout_provider.dart';
+import 'package:g5/provider/cart_provider.dart';
+import 'package:g5/provider/loading_provider.dart';
 import 'package:g5/provider/product_provider.dart';
 
 //file
@@ -15,7 +17,9 @@ void main() {
   runApp(MultiProvider(
     providers: [
       ChangeNotifierProvider(create: ((_) => ProductProvider())),
-      ChangeNotifierProvider(create: ((_) => AccountProvider()))
+      ChangeNotifierProvider(create: ((_) => AccountProvider())),
+      ChangeNotifierProvider(create: ((_) => LoadingProvider())),
+      ChangeNotifierProvider(create: ((_) => CartProvider()))
     ],
     child: MaterialApp(
       initialRoute: Routes.screenLogin,
